@@ -70,6 +70,7 @@ a{color:inherit}
 .fin-glow{position:relative;width:100%;animation:finglow 4.5s ease-in-out infinite}
 .fin-glow .couple{white-space:normal}
 .fin-glow .names-art{width:min(78vw,320px)}
+.foot .finale{margin-top:34px}.foot .finale+.cover-date{margin-top:64px}
 .fin-glow .init-art{width:min(64vw,260px);aspect-ratio:800/490}
 .write .names-art{-webkit-mask-image:var(--m),linear-gradient(to left,#000 var(--p,0%),transparent calc(var(--p,0%) + 14%))!important;mask-image:var(--m),linear-gradient(to left,#000 var(--p,0%),transparent calc(var(--p,0%) + 14%))!important;-webkit-mask-composite:source-in;mask-composite:intersect;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain,100% 100%;mask-size:contain,100% 100%;-webkit-mask-position:center,center;mask-position:center,center}
 @keyframes goldsh{from{background-position:120% 0}to{background-position:-120% 0}}
@@ -440,7 +441,7 @@ function render(){
     '<div class="form-msg" id="r-out" role="status">'+((digits||EP)?'':'يُفتح تأكيد الحضور قريباً.')+'</div></form></section>';
 
   var end=imgUrl(D.endImg);
-  h+=RULE+'<footer class="foot wrap sec clouds">'+'<div class="finale"><img class="fin-sun" src="'+IMG.sun+'" alt="" aria-hidden="true"><div class="fin-glow"><div class="couple gold"><span class="names-art init-art" role="img" aria-label="'+esc(D.groom+" و "+D.bride)+'" style="-webkit-mask-image:url(init.png);mask-image:url(init.png)"></span></div></div></div>'+'<div class="cover-date digits">'+dotDate(D.date)+'</div><small>'+esc(D.footer)+'</small></footer>';
+  h+='<footer class="foot wrap sec clouds">'+'<div class="finale"><img class="fin-sun" src="'+IMG.sun+'" alt="" aria-hidden="true"><div class="fin-glow"><div class="couple gold"><span class="names-art init-art" role="img" aria-label="'+esc(D.groom+" و "+D.bride)+'" style="-webkit-mask-image:url(init.png);mask-image:url(init.png)"></span></div></div></div>'+'<div class="cover-date digits">'+dotDate(D.date)+'</div><small>'+esc(D.footer)+'</small></footer>';
   app.innerHTML=h;
   if(INTRO)buildIntro();
   document.getElementById("light").addEventListener("click",lightUp);
