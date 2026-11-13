@@ -63,6 +63,18 @@ a{color:inherit}
 .cover-names .wa{font-weight:500;font-size:.42em;vertical-align:middle;margin:0 .3em;color:var(--ink-2)}
 .cover-names img{max-height:150px;width:auto;margin:0 auto}
 .names-art{display:block;margin:0 auto;width:min(80vw,340px);aspect-ratio:900/613;background:var(--ink);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+
+.gold .names-art{background:linear-gradient(100deg,#D9AE5C 0%,#F6D98F 30%,#FFF1C4 50%,#F6D98F 70%,#D9AE5C 100%);background-size:250% 100%;animation:goldsh 7s linear infinite}
+.finale{position:relative;width:min(88vw,380px);margin:6px auto 0;display:flex;align-items:center;justify-content:center}
+.fin-sun{position:absolute;left:50%;top:50%;width:112%;max-width:none;opacity:.4;transform:translate(-50%,-50%);animation:finspin 90s linear infinite;pointer-events:none}
+.fin-glow{position:relative;width:100%;animation:finglow 4.5s ease-in-out infinite}
+.fin-glow .couple{white-space:normal}
+.fin-glow .names-art{width:min(78vw,320px)}
+.write .names-art{-webkit-mask-image:var(--m),linear-gradient(to left,#000 var(--p,0%),transparent calc(var(--p,0%) + 14%))!important;mask-image:var(--m),linear-gradient(to left,#000 var(--p,0%),transparent calc(var(--p,0%) + 14%))!important;-webkit-mask-composite:source-in;mask-composite:intersect;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain,100% 100%;mask-size:contain,100% 100%;-webkit-mask-position:center,center;mask-position:center,center}
+@keyframes goldsh{from{background-position:120% 0}to{background-position:-120% 0}}
+@keyframes finspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes finglow{0%,100%{filter:drop-shadow(0 0 7px rgba(255,200,100,.55))}50%{filter:drop-shadow(0 0 17px rgba(255,205,110,.85))}}
+@media (prefers-reduced-motion:reduce){.gold .names-art,.fin-sun,.fin-glow{animation:none}}
 .cover-names .names-art{width:min(50vw,200px);margin:-4px auto -8px}
 .cover-date{font-weight:400;font-size:1.6rem;letter-spacing:.28em;margin-top:2px;padding-inline-start:.28em}
 .cover-art{width:100%;max-width:420px;margin:0 auto}
@@ -243,6 +255,7 @@ form.rsvp{width:100%;max-width:340px;display:flex;flex-direction:column;align-it
 .fld label{font-weight:600;font-size:.82rem;color:var(--ink-2)}
 .rsvp input[type=text]{font:inherit;font-weight:400;font-size:1.15rem;text-align:center;color:var(--ink);background:rgba(242,203,120,.10);border:1.5px solid rgba(242,203,120,.75);padding:14px 12px;border-radius:14px;width:100%;box-shadow:0 0 0 4px rgba(242,203,120,.07);transition:border-color .2s,box-shadow .2s,background .2s}
 .rsvp input[type=text]:focus{outline:0;border-color:#F2CB78;background:rgba(242,203,120,.16);box-shadow:0 0 0 5px rgba(242,203,120,.2)}
+.side{display:flex;gap:10px}.sd{flex:1;font:inherit;font-weight:500;font-size:1.05rem;color:var(--ink);background:transparent;border:1.5px solid rgba(242,203,120,.6);border-radius:14px;padding:12px 8px;cursor:pointer;transition:background .25s,border-color .25s,color .25s}.sd.on{background:#F2CB78;border-color:#F2CB78;color:#16294d}
 .rsvp input[type=text]::placeholder{color:var(--ink-2);opacity:.85}
 .solid{display:flex;align-items:center;justify-content:center;min-height:50px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:var(--f);font-weight:500;font-size:1.05rem;padding:10px 18px;border:1px solid var(--ink);cursor:pointer;width:100%;border-radius:999px}
 .solid.ghost{background:transparent;color:var(--ink)}
@@ -291,7 +304,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 
 <div class="page" id="app"></div>
 
-<script type="application/json" id="inv-data">{"groom":"حازم","bride":"لونا","groomFull":"حازم كردعلي","brideFull":"لونا تكريتي","namesImg":"names.png","endImg":"xc82a2d.webp","kashida":2,"coverLine":"دعوة زفاف","inviteTop":"بقلوب يملؤها الحبّ والودّ تتشرّف","momGroom":"حرم الدكتور فواز كردعلي","momBride":"حرم المهندس محمد جلال التكريتي","inviteLine":"بدعوتكم لمشاركتهما فرحة زفاف ولديهما","ladiesNote":"","inviteNote":"بكلّ الحبّ ننتظركم","date":"2026-12-12","time":"19:00","endTime":"22:30","tz":"+03:00","showCount":true,"venueName":"صالة ديونز بوليفارد","venueAddress":"Dunes Boulevard\nمدينة الجلاء، أوتوستراد المزة","venueArea":"دمشق","mapUrl":"","venueNote":"","showDress":false,"dressTitle":"سهرة","dressNote":"لباس السهرة.","showStory":false,"story":"هنا تُكتب حكايتنا: كيف التقينا، واللحظة التي عرفنا فيها، والطريق الذي أوصلنا إلى هذا اليوم.","showTimeline":true,"timeline":[{"t":"19:00","l":"استقبال المدعوّين","i":"candle"},{"t":"19:30","l":"زفّة العروسين","i":"drum","s":"يدخل العروسان معاً"},{"t":"21:00","l":"سهرة السيدات","i":"ring","s":"يغادر العريس، وتتابع السهرة للسيدات فقط"},{"t":"22:30","l":"الوداع","i":"bird"}],"showDayAfter":false,"daTitle":"اليوم التالي","daDate":"2026-12-13","daTime":"13:00","daVenue":"اسم المكان","daAddress":"العنوان","daMap":"","daNote":"غداء هادئ يجمعنا في اليوم التالي للزفاف.","rsvpBy":"2026-11-20","whatsapp":"963990482113","rsvpNote":"يسعدنا تأكيد حضوركم قبل الموعد.","footer":"بكلّ الحبّ","music":"music.m4a","musicOn":true,"intro":true,"namesKashida":3,"journey":true,"namesJoin":"calli","journeyColor":false,"wallpaper":false,"mapQuery":"Dunes Boulevard Damascus","tzName":"Asia/Damascus","rsvpEndpoint":"https://script.google.com/macros/s/AKfycbzu6hYrp8QM0dcqhWMRPp8rKkb5l63BzS3g0eBawKdtu7yURxghEWJCgyNCwxFqiYrA/exec","theme":"night"}</script>
+<script type="application/json" id="inv-data">{"groom":"حازم","bride":"لونا","groomFull":"حازم كردعلي","brideFull":"لونا تكريتي","namesImg":"names.png","endImg":"xc82a2d.webp","kashida":2,"coverLine":"دعوة زفاف","inviteTop":"بقلوب يملؤها الحبّ والودّ تتشرّف","momGroom":"حرم الدكتور فواز كردعلي","momBride":"حرم المهندس محمد جلال التكريتي","inviteLine":"بدعوتكم لمشاركتهما فرحة زفاف ولديهما","ladiesNote":"","inviteNote":"بكلّ الحبّ ننتظركم","date":"2026-12-12","time":"19:00","endTime":"22:30","tz":"+03:00","showCount":true,"venueName":"صالة ديونز بوليفارد","venueAddress":"Dunes Boulevard\nمدينة الجلاء، أوتوستراد المزة","venueArea":"دمشق","mapUrl":"","venueNote":"","showDress":false,"dressTitle":"سهرة","dressNote":"لباس السهرة.","showStory":false,"story":"هنا تُكتب حكايتنا: كيف التقينا، واللحظة التي عرفنا فيها، والطريق الذي أوصلنا إلى هذا اليوم.","showTimeline":true,"timeline":[{"t":"19:00","l":"استقبال المدعوّين","i":"candle"},{"t":"19:30","l":"زفّة العروسين","i":"drum","s":"يدخل العروسان معاً"},{"t":"21:00","l":"سهرة السيدات","i":"ring","s":"يغادر العريس، وتتابع السهرة للسيدات فقط"},{"t":"22:30","l":"الوداع","i":"bird"}],"showDayAfter":false,"daTitle":"اليوم التالي","daDate":"2026-12-13","daTime":"13:00","daVenue":"اسم المكان","daAddress":"العنوان","daMap":"","daNote":"غداء هادئ يجمعنا في اليوم التالي للزفاف.","rsvpBy":"2026-11-20","whatsapp":"963990482113","waGroom":"963944611062","waBride":"963944525055","rsvpNote":"يسعدنا تأكيد حضوركم قبل الموعد.","footer":"بكلّ الحبّ","music":"music.m4a","musicOn":true,"intro":true,"namesKashida":3,"journey":true,"namesJoin":"calli","journeyColor":false,"wallpaper":false,"mapQuery":"Dunes Boulevard Damascus","tzName":"Asia/Damascus","rsvpEndpoint":"https://script.google.com/macros/s/AKfycbzu6hYrp8QM0dcqhWMRPp8rKkb5l63BzS3g0eBawKdtu7yURxghEWJCgyNCwxFqiYrA/exec","theme":"night"}</script>
 
 <script id="inv-js">
 (function(){
@@ -395,7 +408,7 @@ var RULE=EMB(true);
 /* ---------- page ---------- */
 var lit=false;
 function JOIN(){var m=D.namesJoin||"calli";return m==="none"?'<span class="wa-gap"></span>':m==="waw"?'<span class="wa">و</span>':m==="emblem"?'<img class="wa-emb" src="'+IMG.emblem+'" alt="و">':'<img class="wa-calli" src="'+IMG.waw+'" alt="و">'}
-function coupleHTML(tag,cls){var img=imgUrl(D.namesImg);return img?'<'+tag+' class="'+cls+'"><span class="names-art" role="img" aria-label="'+esc(D.groom+" و "+D.bride)+'" style="-webkit-mask-image:url('+esc(img)+');mask-image:url('+esc(img)+')"></span></'+tag+'>':'<'+tag+' class="'+cls+'">'+KN(D.groom)+JOIN()+KN(D.bride)+'</'+tag+'>'}
+function coupleHTML(tag,cls){var img=imgUrl(D.namesImg);return img?'<'+tag+' class="'+cls+'"><span class="names-art" role="img" aria-label="'+esc(D.groom+" و "+D.bride)+'" style="--m:url('+esc(img)+');-webkit-mask-image:url('+esc(img)+');mask-image:url('+esc(img)+')"></span></'+tag+'>':'<'+tag+' class="'+cls+'">'+KN(D.groom)+JOIN()+KN(D.bride)+'</'+tag+'>'}
 function render(){
   var title=D.groom+" و "+D.bride;document.title=title;
   var vLoc=[D.venueName,D.venueAddress,D.venueArea].filter(Boolean).join("، ").replace(/\s*\n\s*/g,"، ");
@@ -404,7 +417,7 @@ function render(){
   var INTRO=D.intro!==false&&!lit;
   h+='<div class="light-row wrap'+(INTRO?' done':'')+'">'+(INTRO?'':'<button type="button" class="light-btn" id="light"'+(lit?' disabled':'')+'>'+(lit?'أهلاً وسهلاً بكم':'أشعِلوا الشموع')+'</button>')+'<div class="light-hint"'+(INTRO?'':' id="light-hint"')+'>'+(lit||INTRO?'تابعوا النزول لقراءة الدعوة':'')+'</div></div></div>';
 
-  h+=RULE+'<section class="wrap sec inv"><img class="verse" src="'+IMG.verse+'" alt="وجعل بينكم مودة ورحمة">'+(D.inviteTop?'<p class="big lead">'+esc(D.inviteTop)+'</p>':'')+'<div class="moms"><span>'+momHTML(D.momGroom)+'</span><span class="and">و</span><span>'+momHTML(D.momBride)+'</span></div><p class="big">'+esc(D.inviteLine)+'</p>'+coupleHTML("div","couple")+'<div class="date-words">'+esc(longDate(D.date))+'</div><span class="label">'+esc(range(D.time,D.endTime))+'</span>'+(D.ladiesNote?'<span class="ladies">'+esc(D.ladiesNote)+'</span>':'')+(D.inviteNote?'<p>'+br(D.inviteNote)+'</p>':'')+'</section>';
+  h+=RULE+'<section class="wrap sec inv"><img class="verse" src="'+IMG.verse+'" alt="وجعل بينكم مودة ورحمة">'+(D.inviteTop?'<p class="big lead">'+esc(D.inviteTop)+'</p>':'')+'<div class="moms"><span>'+momHTML(D.momGroom)+'</span><span class="and">و</span><span>'+momHTML(D.momBride)+'</span></div><p class="big">'+esc(D.inviteLine)+'</p>'+coupleHTML("div","couple write")+'<div class="date-words">'+esc(longDate(D.date))+'</div><span class="label">'+esc(range(D.time,D.endTime))+'</span>'+(D.ladiesNote?'<span class="ladies">'+esc(D.ladiesNote)+'</span>':'')+(D.inviteNote?'<p>'+br(D.inviteNote)+'</p>':'')+'</section>';
 
   if(D.showCount){h+=RULE+'<section class="wrap sec" aria-label="العدّ التنازلي"><h2 class="t-title">'+K("باقٍ على الموعد")+'</h2><div class="count"><div><b id="cd-d">٠</b><span class="label">يوم</span></div><div><b id="cd-h">٠</b><span class="label">ساعة</span></div><div><b id="cd-m">٠</b><span class="label">دقيقة</span></div></div><p class="label" id="cd-note" hidden></p></section>'}
 
@@ -419,18 +432,18 @@ function render(){
 
   var digits=(D.whatsapp||"").replace(/\D/g,""),EP=(D.rsvpEndpoint||"").trim(),off=(digits||EP)?'':' aria-disabled="true"';
   h+=RULE+'<section class="wrap sec" id="rsvp">'+'<img class="seal" src="'+IMG.seal+'" alt="" aria-hidden="true">'+'<h2 class="t-title">'+K("تأكيد الحضور")+'</h2><span class="label">قبل '+esc(shortDate(D.rsvpBy))+'</span><p>'+br(D.rsvpNote)+'</p>'+
-    '<form class="rsvp" id="rsvp-form" novalidate><div class="fld"><label for="r-name">اسمكم الكريم</label><input type="text" id="r-name" autocomplete="name" placeholder="اكتبوا اسمكم هنا"></div>'+
-    '<p class="how">'+(EP?(digits?'اكتبوا اسمكم ثم اختاروا ردّكم: يُسجَّل ردّكم عندنا مباشرة، ويفتح واتساب برسالة جاهزة، فاضغطوا «إرسال» هناك أيضاً.':'اكتبوا اسمكم ثم اختاروا ردّكم، وسيصلنا التأكيد مباشرة.'):'اختاروا ردّكم، فيفتح واتساب برسالة جاهزة باسمكم. اضغطوا «إرسال» هناك ليصلنا التأكيد.')+'</p>'+
+    '<form class="rsvp" id="rsvp-form" novalidate><div class="fld"><label>أنتم من طرف</label><div class="side" role="radiogroup" aria-label="الطرف"><button type="button" class="sd" data-side="g" role="radio" aria-checked="false">العريس</button><button type="button" class="sd" data-side="b" role="radio" aria-checked="false">العروس</button></div></div><div class="fld"><label for="r-name">اسمكم الكريم</label><input type="text" id="r-name" autocomplete="name" placeholder="اكتبوا اسمكم هنا"></div>'+
+    '<p class="how">'+(EP?(digits?'اختاروا الطرف، واكتبوا اسمكم، ثم اختاروا ردّكم: يُسجَّل ردّكم عندنا ويفتح واتساب برسالة جاهزة إلى والدة الطرف الذي اخترتموه، فاضغطوا «إرسال» هناك أيضاً.':'اكتبوا اسمكم ثم اختاروا ردّكم، وسيصلنا التأكيد مباشرة.'):'اختاروا ردّكم، فيفتح واتساب برسالة جاهزة باسمكم. اضغطوا «إرسال» هناك ليصلنا التأكيد.')+'</p>'+
     '<a class="solid" id="r-yes" href="#" target="_blank" rel="noopener"'+off+'>سأحضر بكلّ سرور</a>'+
     '<a class="solid ghost" id="r-no" href="#" target="_blank" rel="noopener"'+off+'>أعتذر عن الحضور</a>'+
     '<div class="form-msg" id="r-out" role="status">'+((digits||EP)?'':'يُفتح تأكيد الحضور قريباً.')+'</div></form></section>';
 
   var end=imgUrl(D.endImg);
-  h+=RULE+'<footer class="foot wrap sec clouds">'+(end?'<img class="end-img" src="'+esc(end)+'" alt="'+esc(title)+'">':coupleHTML("div","couple"))+'<div class="cover-date digits">'+dotDate(D.date)+'</div><small>'+esc(D.footer)+'</small></footer>';
+  h+=RULE+'<footer class="foot wrap sec clouds">'+'<div class="finale"><img class="fin-sun" src="'+IMG.sun+'" alt="" aria-hidden="true"><div class="fin-glow">'+coupleHTML("div","couple gold")+'</div></div>'+'<div class="cover-date digits">'+dotDate(D.date)+'</div><small>'+esc(D.footer)+'</small></footer>';
   app.innerHTML=h;
   if(INTRO)buildIntro();
   document.getElementById("light").addEventListener("click",lightUp);
-  wireRSVP();tick();fx();skyInit();journeyBuild();fitMoms();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitMoms);if(!window.__fitMoms){window.__fitMoms=1;addEventListener("resize",fitMoms);var mm=app.querySelector(".moms");if(mm&&window.ResizeObserver){var lastW=0;new ResizeObserver(function(){if(mm.clientWidth!==lastW){lastW=mm.clientWidth;fitMoms()}}).observe(mm)}}if(!INTRO)themeBtn();digitFont();preloadMusic();
+  wireRSVP();writeInit();tick();fx();skyInit();journeyBuild();fitMoms();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitMoms);if(!window.__fitMoms){window.__fitMoms=1;addEventListener("resize",fitMoms);var mm=app.querySelector(".moms");if(mm&&window.ResizeObserver){var lastW=0;new ResizeObserver(function(){if(mm.clientWidth!==lastW){lastW=mm.clientWidth;fitMoms()}}).observe(mm)}}if(!INTRO)themeBtn();digitFont();preloadMusic();
 }
 function digitFont(){var w=document.createTreeWalker(app,NodeFilter.SHOW_TEXT,null),n,list=[];while(n=w.nextNode()){if(/[٠-٩]/.test(n.nodeValue)&&!n.parentNode.closest("script,style,input,textarea,.dg,.digits,.cover-date,.count"))list.push(n)}
   list.forEach(function(t){var f=document.createDocumentFragment();t.nodeValue.split(/([٠-٩]+(?:[:٫.,][٠-٩]+)*)/).forEach(function(p,i){if(!p)return;if(i%2){var sp=document.createElement("span");sp.className="dg";sp.textContent=p;f.appendChild(sp)}else f.appendChild(document.createTextNode(p))});t.parentNode.replaceChild(f,t)})}
@@ -511,16 +524,22 @@ function tick(){var el=document.getElementById("cd-d");if(!el)return;var target=
   var m=Math.floor(ms/60000);el.textContent=ar(Math.floor(m/1440));document.getElementById("cd-h").textContent=ar(Math.floor(m%1440/60));document.getElementById("cd-m").textContent=ar(m%60);
   clearTimeout(cdTimer);cdTimer=setTimeout(tick,30000)}
 
+function writeInit(){var els=[].slice.call(document.querySelectorAll(".write .names-art"));if(!els.length)return;var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,best=els.map(function(){return 0});
+function upd(){var vh=innerHeight||800;els.forEach(function(el,i){var r=el.getBoundingClientRect(),t=rm?1:Math.max(0,Math.min(1,(vh*.88-r.top)/(vh*.5)));if(t>best[i])best[i]=t;el.style.setProperty("--p",(best[i]*116-14)+"%")})}
+upd();addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd)}
 function wireRSVP(){
   var name=document.getElementById("r-name");if(!name)return;
-  var out=document.getElementById("r-out"),digits=(D.whatsapp||"").replace(/\D/g,"");
-  function msg(yes){return ["تأكيد حضور · زفاف "+D.groom+" و "+D.bride+" · "+shortDate(D.date),"الاسم: "+name.value.trim(),yes?"سأحضر بكلّ سرور":"أعتذر عن الحضور"].join("\n")}
+  var out=document.getElementById("r-out"),dAll=(D.whatsapp||"").replace(/\D/g,""),dG=(D.waGroom||"").replace(/\D/g,""),dB=(D.waBride||"").replace(/\D/g,""),side="";
+  var sdB=document.querySelectorAll(".sd");sdB.forEach(function(b){b.addEventListener("click",function(){side=b.getAttribute("data-side");sdB.forEach(function(x){var on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-checked",on?"true":"false")});out.textContent=""})});
+  function dg(){return side==="g"?(dG||dAll):side==="b"?(dB||dAll):dAll}
+  function sideTxt(){return side==="g"?"من طرف العريس":side==="b"?"من طرف العروس":""}
+  function msg(yes){return ["تأكيد حضور · زفاف "+D.groom+" و "+D.bride+" · "+shortDate(D.date),"الاسم: "+name.value.trim(),sideTxt(),yes?"سأحضر بكلّ سرور":"أعتذر عن الحضور"].join("\n")}
   var EP=(D.rsvpEndpoint||"").trim(),busy=false;
   [["r-yes",true],["r-no",false]].forEach(function(p){var a=document.getElementById(p[0]);
     a.addEventListener("click",function(e){
-      if(EP){var nm=name.value.trim();if(!nm){e.preventDefault();out.textContent="اكتبوا اسمكم أولاً.";name.focus();return}if(busy){e.preventDefault();return}busy=true;out.textContent="جارٍ الإرسال…";
+      var digits=dg();if(!side){e.preventDefault();out.textContent="اختاروا أولاً: من طرف العريس أم العروس.";return}if(EP){var nm=name.value.trim();if(!nm){e.preventDefault();out.textContent="اكتبوا اسمكم أولاً.";name.focus();return}if(busy){e.preventDefault();return}busy=true;out.textContent="جارٍ الإرسال…";
         var both=!!digits,wurl="";if(both){wurl="https://wa.me/"+digits+"?text="+encodeURIComponent(msg(p[1]));a.href=wurl}else{e.preventDefault()}
-        fetch(EP,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:nm,answer:p[1]?"سأحضر":"أعتذر"})})
+        fetch(EP,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:nm+" — "+sideTxt(),answer:p[1]?"سأحضر":"أعتذر"})})
           .then(function(){out.textContent=(p[1]?"سُجّل تأكيد حضوركم ✓":"سُجّل اعتذاركم.")+(both?" وفُتح واتساب برسالتكم، فاضغطوا «إرسال» هناك أيضاً.":"");if(both){var l=document.createElement("a");l.className="wa-again";l.href=wurl;l.target="_blank";l.rel="noopener";l.textContent="إن لم يفتح واتساب، اضغطوا هنا";out.appendChild(document.createElement("br"));out.appendChild(l)}})
           .catch(function(){out.textContent=both?"تعذّر الحفظ الآن، لكن رسالة واتساب جاهزة: اضغطوا «إرسال» هناك.":"تعذّر الإرسال الآن. تحقّقوا من الاتصال وحاولوا مرة أخرى."})
           .then(function(){busy=false});return}if(!digits){e.preventDefault();out.textContent="يُفتح تأكيد الحضور قريباً.";return}
